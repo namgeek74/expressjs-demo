@@ -15,6 +15,7 @@ app.get('/user', (req, res) => {
         users: [
             { id: 1, name: "Nam" },
             { id: 2, name: "Kelvin" },
+            { id: 3, name: "Kelvin Kien" },
         ]
     });
 })
