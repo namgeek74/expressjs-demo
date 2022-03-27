@@ -5,8 +5,11 @@ const port = 3000;
 
 let users = [
     { id: 1, name: "Nam" },
-    { id: 2, name: "Kelvin" },
-    { id: 3, name: "Kelvin Kien" },
+    { id: 2, name: "Huy" },
+    { id: 3, name: "Kien" },
+    { id: 4, name: "Thinh" },
+    { id: 5, name: "Cong" },
+    { id: 6, name: "Hieu" },
 ]
 
 app.set('view engine', 'pug');
@@ -24,13 +27,11 @@ app.get('/user', (req, res) => {
 
 app.get('/users/search', (req, res) => {
     let q = req.query.q;
-    let matchedUser = users.filter(item => item.name.indexOf(q) !== -1);
-    // console.log(matchedUser);
+    let matchedUser = users.filter(item => item.name.toLowerCase().indexOf(q) !== -1);
 
     res.render('users/index', {
         users: matchedUser
     })
-    // console.log(req.query);
 })
 
 app.listen(port, function () {
