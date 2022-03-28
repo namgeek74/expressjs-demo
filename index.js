@@ -1,5 +1,9 @@
 const express = require("express");
+const bodyParser = require('body-parser')
 const app = express();
+
+app.use(bodyParser.json()) // for parsing application/json
+app.use(bodyParser.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
 
 const port = 3000;
 
@@ -19,7 +23,7 @@ app.get('/', (req, res) => {
     res.render('index', { title: 'Hey', message: 'Hello there!' })
 })
 
-app.get('/user', (req, res) => {
+app.get('/users', (req, res) => {
     res.render("users/index", {
         users
     });
@@ -32,6 +36,15 @@ app.get('/users/search', (req, res) => {
     res.render('users/index', {
         users: matchedUser
     })
+})
+
+app.get("/users/create", (req, res) => {
+    res.render("users/create");
+})
+
+app.post("/users/create", (req, res) => {
+    users.push(req.body);
+    res.redirect("/users");
 })
 
 app.listen(port, function () {
