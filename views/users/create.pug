@@ -4,8 +4,20 @@ block content
 
     h1 Create user
 
-    form(action="/users/create", method="POST")
-        label Name
-        input(name="name", type="text")
+    if errors
+        each error in errors
+            div.alert.alert-danger= error
 
-        button Create
+    //- form(action="/users/create", method="POST")
+    //-     label Name
+    //-     input(name="name", type="text")
+
+    //-     button Create
+    form(action="/users/create", method="POST")
+        .mb-3
+            label.form-label(for='name') Name
+            input#name.form-control(type='text', name="name", value=values ? values.name : "")
+        .mb-3
+            label.form-label(for='phone') Phone
+            input#phone.form-control(type='number', name="phone", value=values ? values.phone : "")
+        button.btn.btn-primary(type='submit') Submit
