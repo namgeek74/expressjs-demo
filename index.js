@@ -3,6 +3,8 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser')
 
 const usersRoute = require('./routes/users.route');
+const authRoute = require("./routes/auth.route");
+const middlewares = require("./middlewares/auth.middleware");
 
 const app = express();
 
@@ -10,7 +12,8 @@ app.use(cookieParser());
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 app.use(express.static('public'));
-app.use('/users', usersRoute);
+app.use('/users', middlewares.requireAuth, usersRoute);
+app.use("/auth", authRoute);
 
 const port = 5000;
 

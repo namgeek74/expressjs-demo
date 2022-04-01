@@ -10,31 +10,14 @@
     },
     {
       "name": "Nam Nguyen",
-      "id": "GlRPLSSo-"
-    },
-    {
-      "name": "Cathy",
-      "id": "aFqvWaA-R"
+      "id": "GlRPLSSo-",
+      "email": "test@gmail.com",
+      "password": "123456"
     },
     {
       "name": "Nam Tran",
       "phone": "097485",
       "id": "gXczCoh_Z"
-    },
-    {
-      "name": "",
-      "phone": "",
-      "id": "lq11Mtmnb"
-    },
-    {
-      "name": "",
-      "phone": "",
-      "id": "c5Xr7Kk0q"
-    },
-    {
-      "name": "nam",
-      "phone": "",
-      "id": "r6PkqQ9VL"
     },
     {
       "name": "Ha Son Hai",

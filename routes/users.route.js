@@ -1,11 +1,11 @@
 const express = require('express');
-const { route } = require('express/lib/application');
 const controllers = require('../controllers/users.controller');
 const validate = require("../validate/users.validate");
+const middlewares = require("../middlewares/auth.middleware");
 
 const router = express.Router();
 
-router.get('/', controllers.index);
+router.get('/', middlewares.requireAuth, controllers.index);
 
 router.get("/cookie", (req, res, next) => {
     res.cookie("user-id", 12345);
