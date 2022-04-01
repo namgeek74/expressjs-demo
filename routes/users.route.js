@@ -7,6 +7,11 @@ const router = express.Router();
 
 router.get('/', controllers.index);
 
+router.get("/cookie", (req, res, next) => {
+    res.cookie("user-id", 12345);
+    res.send("Hello");
+})
+
 function middleware1(req, res, next) {
     res.locals.success = true;
     next();
