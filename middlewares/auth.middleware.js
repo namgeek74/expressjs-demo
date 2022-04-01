@@ -1,7 +1,10 @@
 const db = require('../db');
 
 module.exports.requireAuth = (req, res, next) => {
-    const userId = req.cookies.userId;
+    const userId = req.signedCookies.userId;
+    // console.log(req.cookies);
+    // console.log(req.signedCookies);
+
     if (!userId) {
         res.redirect("/auth/login");
         return;
@@ -12,6 +15,8 @@ module.exports.requireAuth = (req, res, next) => {
         res.redirect("/auth/login");
         return;
     }
+
+    res.locals.user = user;
 
     next();
 }

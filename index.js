@@ -8,7 +8,9 @@ const middlewares = require("./middlewares/auth.middleware");
 
 const app = express();
 
-app.use(cookieParser());
+const secretString = "hdasj982349";
+
+app.use(cookieParser(secretString));
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 app.use(express.static('public'));
