@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 const express = require('express');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser')
@@ -8,9 +10,7 @@ const middlewares = require("./middlewares/auth.middleware");
 
 const app = express();
 
-const secretString = "hdasj982349";
-
-app.use(cookieParser(secretString));
+app.use(cookieParser(process.env.SECRET_STRING));
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 app.use(express.static('public'));
