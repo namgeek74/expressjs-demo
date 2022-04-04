@@ -13,11 +13,14 @@ block content
     //-     input(name="name", type="text")
 
     //-     button Create
-    form(action="/users/create", method="POST")
+    form(action="/users/create", method="POST", enctype="multipart/form-data")
         .mb-3
             label.form-label(for='name') Name
             input#name.form-control(type='text', name="name", value=values ? values.name : "")
         .mb-3
             label.form-label(for='phone') Phone
             input#phone.form-control(type='number', name="phone", value=values ? values.phone : "")
+        .mb-3
+            label.form-label(for='avatar') Avatar
+            input#avatar.form-control-file(type='file', name="avatar")
         button.btn.btn-primary(type='submit') Submit
