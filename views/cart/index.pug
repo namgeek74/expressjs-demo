@@ -1,0 +1,20 @@
+extends ../layouts/common.pug
+
+block content
+
+    h1 Your cart
+
+    each product in currentCart
+        p
+            b ID:
+            span &nbsp
+            span= product.id
+        p
+            b Description:
+            span &nbsp
+            span= product.des
+        p
+            b Quantity:
+            span &nbsp
+            span= product.quantity
+        hr

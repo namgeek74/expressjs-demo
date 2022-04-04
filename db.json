@@ -50,73 +50,66 @@
   ],
   "products": [
     {
-      "id": 1,
+      "id": "1a",
       "description": "1"
     },
     {
-      "id": 2,
+      "id": "2a",
       "description": "2"
     },
     {
-      "id": 3,
+      "id": "3a",
       "description": "3"
     },
     {
-      "id": 4,
+      "id": "4a",
       "description": "4"
     },
     {
-      "id": 5,
+      "id": "5a",
       "description": "5"
     },
     {
-      "id": 6,
+      "id": "6a",
       "description": "6"
     },
     {
-      "id": 7,
+      "id": "7a",
       "description": "7"
     },
     {
-      "id": 8,
+      "id": "8a",
       "description": "8"
     },
     {
-      "id": 9,
+      "id": "9a",
       "description": "9"
     },
     {
-      "id": 10,
+      "id": "10a",
       "description": "10"
     },
     {
-      "id": 11,
+      "id": "11a",
       "description": "11"
     },
     {
-      "id": 12,
+      "id": "12a",
       "description": "12"
     },
     {
-      "id": 13,
+      "id": "13a",
       "description": "13"
     }
   ],
   "sessions": [
     {
-      "id": "iV4wyoEHc",
-      "cart": [
-        null,
-        1,
-        1
-      ]
-    },
-    {
-      "id": "dL7QNK17X",
-      "cart": [
-        null,
-        1
-      ]
+      "id": "BEoGEcmV3",
+      "cart": {
+        "1a": 2,
+        "2a": 1,
+        "3a": 3
+      }
     }
   ]
 }

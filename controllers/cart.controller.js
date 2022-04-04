@@ -12,10 +12,32 @@ module.exports.addToCart = (req, res, next) => {
     return;
   }
 
+  let counter = db.get("sessions")
+    .find({ id: sessionId })
+    .get('cart.' + productId, 0)
+    .value();
+
   db.get('sessions')
     .find({ id: sessionId })
-    .set('cart.' + productId, 1)
+    .set('cart.' + productId, counter + 1)
     .write();
 
   res.redirect('/products');
 };
+
+module.exports.showCart = (req, res, next) => {
+  const products = db.get("products").value();
+  const cart = db.get("sessions").find({ id: req.signedCookies.sessionId }).value();
+
+  const currentCart = []
+  for (const item in cart.cart) {
+    const product = {
+      id: item,
+      quantity: cart.cart[item],
+      des: products.find(ele => ele.id === item).description
+    }
+    currentCart.push(product);
+  }
+
+  res.render("cart/index", { currentCart })
+}
