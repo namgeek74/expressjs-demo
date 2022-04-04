@@ -101,5 +101,22 @@
       "id": 13,
       "description": "13"
     }
+  ],
+  "sessions": [
+    {
+      "id": "iV4wyoEHc",
+      "cart": [
+        null,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "dL7QNK17X",
+      "cart": [
+        null,
+        1
+      ]
+    }
   ]
 }

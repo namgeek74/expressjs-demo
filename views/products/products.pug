@@ -13,6 +13,8 @@ block content
             b Description:
             span &nbsp
             span= product.description
+        a.btn.btn-primary(href="/cart/add/" + product.id) Add
+        hr
 
     form(action="/products/pagination", method="POST")
         .flex-container 

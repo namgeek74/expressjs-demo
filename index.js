@@ -8,6 +8,8 @@ const usersRoute = require('./routes/users.route');
 const authRoute = require('./routes/auth.route');
 const middlewares = require('./middlewares/auth.middleware');
 const productsRoute = require('./routes/products.route');
+const sessionMiddleware = require('./middlewares/session.middleware');
+const cartRoute = require('./routes/cart.route');
 
 const app = express();
 
@@ -15,9 +17,11 @@ app.use(cookieParser(process.env.SECRET_STRING));
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 app.use(express.static('public'));
+app.use(sessionMiddleware);
 app.use('/users', middlewares.requireAuth, usersRoute);
 app.use('/auth', authRoute);
 app.use('/products', productsRoute);
+app.use('/cart', cartRoute);
 
 const port = 5000;
 
