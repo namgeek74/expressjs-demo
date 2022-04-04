@@ -1,0 +1,23 @@
+extends ../layouts/common.pug
+
+block content
+
+    h1 This is a page to show infomation of products and pagination them
+
+    each product in products
+        p
+            b ID:
+            span &nbsp
+            span= product.id
+        p
+            b Description:
+            span &nbsp
+            span= product.description
+
+    form(action="/products/pagination", method="POST")
+        .flex-container 
+            a.pagination-link(href='/products?page=' + (currentPage - 2)) Prev
+            a.pagination-link(href='/products?page=' + (currentPage - 1))= currentPage - 1
+            a.pagination-link(href='/products?page=' + (currentPage))= currentPage
+            a.pagination-link(href='/products?page=' + (currentPage + 1))= currentPage + 1
+            a.pagination-link(href='/products?page=' + (currentPage + 2)) Next

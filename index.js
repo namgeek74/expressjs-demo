@@ -1,12 +1,13 @@
-require("dotenv").config();
+require('dotenv').config();
 
 const express = require('express');
 const bodyParser = require('body-parser');
-const cookieParser = require('cookie-parser')
+const cookieParser = require('cookie-parser');
 
 const usersRoute = require('./routes/users.route');
-const authRoute = require("./routes/auth.route");
-const middlewares = require("./middlewares/auth.middleware");
+const authRoute = require('./routes/auth.route');
+const middlewares = require('./middlewares/auth.middleware');
+const productsRoute = require('./routes/products.route');
 
 const app = express();
 
@@ -15,7 +16,8 @@ app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 app.use(express.static('public'));
 app.use('/users', middlewares.requireAuth, usersRoute);
-app.use("/auth", authRoute);
+app.use('/auth', authRoute);
+app.use('/products', productsRoute);
 
 const port = 5000;
 

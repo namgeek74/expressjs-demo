@@ -4,3 +4,21 @@
     color: red;
     margin: 0;
 }
+
+.flex-container {
+    text-align: center;
+}
+
+.pagination-link-container {
+    width: 40px;
+    height: 40px;
+    border: solid black 1px;
+}
+
+.pagination-link {
+    text-decoration: none;
+    border: solid black 1px;
+    padding: 5px;
+    margin: 0 2px;
+    border-radius: 10px;
+}
