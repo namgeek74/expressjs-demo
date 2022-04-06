@@ -10,6 +10,7 @@ const middlewares = require('./middlewares/auth.middleware');
 const productsRoute = require('./routes/products.route');
 const sessionMiddleware = require('./middlewares/session.middleware');
 const cartRoute = require('./routes/cart.route');
+const transferRoute = require('./routes/transfer.route');
 
 const app = express();
 
@@ -22,6 +23,7 @@ app.use('/users', middlewares.requireAuth, usersRoute);
 app.use('/auth', authRoute);
 app.use('/products', productsRoute);
 app.use('/cart', cartRoute);
+app.use('/transfer', transferRoute);
 
 const port = 5000;
 

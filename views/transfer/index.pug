@@ -1,0 +1,14 @@
+extends ../layouts/common.pug
+
+block content
+
+    h1 Transfer page
+
+    form(action="/transfer/create", method="POST")
+        .mb-3
+            label.form-label(for='account') Account
+            input#account.form-control(type='text', name="account")
+        .mb-3
+            label.form-label(for='amount') Amount
+            input#amount.form-control(type='number', name="amount")
+        button.btn.btn-primary(type='submit') Transfer
