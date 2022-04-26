@@ -3,6 +3,9 @@ require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
+const mongoose = require('mongoose');
+
+mongoose.connect(process.env.MONGO_URL);
 
 const usersRoute = require('./routes/users.route');
 const authRoute = require('./routes/auth.route');
@@ -37,5 +40,3 @@ app.get('/', (req, res) => {
 app.listen(port, function () {
   console.log('Server listening on port ' + port);
 });
-
-console.log("add some changes");
