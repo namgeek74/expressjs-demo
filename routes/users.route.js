@@ -21,7 +21,6 @@ function middleware1(req, res, next) {
 }
 
 function middleware2(req, res, next) {
-  console.log(res.locals.success);
   res.send('Hello middleware');
 }
 

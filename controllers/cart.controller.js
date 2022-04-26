@@ -19,7 +19,7 @@ module.exports.addToCart = async (req, res, next) => {
   //   .find({ id: sessionId })
   //   .get('cart.' + productId, 0)
   //   .value();
-  let currentProduct = await Sessions.find({id: sessionId});
+  let currentSession = await Sessions.find({id: sessionId});
 
   // db.get('sessions')
   //   .find({ id: sessionId })
